@@ -23,7 +23,6 @@ public class DepartmentService {
 
         return this.departmentDAO.findDepartmentByName(departmentName);
     }
-
     public List<Department> getDepartments() {
         return this.departmentDAO.findAll();
     }
