@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+  backend:
+    # Configuration du service "backend"
+    build:
+      context: ./simple-api-student-main  # Le contexte de construction, où se trouve le Dockerfile
+      dockerfile: Dockerfile  # Le fichier Dockerfile à utiliser
+    container_name: simpleapistudent  # Nom du conteneur
+    networks:
+      - app-network  # Connecte le service au réseau "app-network"
+
+  database:
+    # Configuration du service "database"
+    build:
+      context: ./tp1/tp  # Le contexte de construction, où se trouve le Dockerfile
+      dockerfile: Dockerfile  # Le fichier Dockerfile à utiliser
+    container_name: tp  # Nom du conteneur
+    environment:
+      POSTGRES_DB: db  # Variables d'environnement pour la base de données PostgreSQL
+      POSTGRES_USER: usr  # Nom de l'utilisateur de la base de données
+      POSTGRES_PASSWORD: pwd  # Mot de passe de l'utilisateur de la base de données
+    networks:
+      - app-network  # Connecte le service au réseau "app-network"
+
+  httpd:
+    # Configuration du service "httpd"
+    build: ./html  # Emplacement du Dockerfile (par défaut, Dockerfile est utilisé)
+    ports:
+      - "8085:80"  # Redirige le port 80 du conteneur vers le port 8085 de l'hôte
+    networks:
+      - app-network  # Connecte le service au réseau "app-network"
+
+networks:
+  app-network:
