@@ -1,0 +1,12 @@
+- name: Run database
+  docker_container:
+    name: tp
+    image: badou237/devops_database:1.0
+    pull: true
+    env:
+      POSTGRES_DB: db  # Variables d'environnement pour la base de données PostgreSQL
+      POSTGRES_USER: usr  # Nom de l'utilisateur de la base de données
+      POSTGRES_PASSWORD: pwd  # Mot de passe de l'utilisateur de la base de données
+    networks:
+      - name: app-network  # Connecte le service au réseau "app-network"
+

@@ -1,0 +1,15 @@
+---
+# This YAML file represents a tasks file for the "backend" role in an Ansible playbook.
+
+# Task: Run the backend container
+- name: Run backend
+  docker_container:
+    # Name of the Docker container to create
+    name: simpleapistudent
+    # Docker image to use for the container
+    image: badou237/devops_backend:1.0
+    # Ensure that the image is pulled from the repository
+    pull: true
+    # Define the network(s) to connect the container to
+    networks:
+      - name: app-network  # Connects the container to the "app-network" network

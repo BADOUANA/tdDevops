@@ -1,0 +1,18 @@
+---
+# This YAML file represents a tasks file for the "httpd" role in an Ansible playbook.
+
+# Task: Run an HTTPD Docker container
+- name: Run HTTPD
+  docker_container:
+    # Name of the Docker container to create
+    name: devops-httpd-1
+    # Docker image to use for the container
+    image: badou237/devops_httpd:1.0
+    # Ensure that the image is pulled from the repository if it's not available locally
+    pull: true
+    # Define port mapping for the container (host_port:container_port)
+    ports:
+      - "80:80"
+    # Define the network(s) to connect the container to
+    networks:
+      - name: app-network  # Connects the container to the "app-network" network

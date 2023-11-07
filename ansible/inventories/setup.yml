@@ -1,0 +1,16 @@
+# Ansible Inventory
+
+# Define the "all" group, which includes all hosts in the inventory.
+all:
+  # Define variables that can be used within the inventory.
+  vars:
+    # Set the default SSH user for connecting to remote hosts to "centos."
+    ansible_user: centos
+    # Specify the path to the SSH private key file for authentication.
+    ansible_ssh_private_key_file: /id_rsa
+
+  # Define child groups within the "all" group.
+  children:
+    # Define the "prod" group, which includes hosts under the "cedric.edzoabadouana.takima.cloud" domain.
+    prod:
+      hosts: cedric.edzoabadouana.takima.cloud

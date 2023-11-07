@@ -1,0 +1,43 @@
+---
+# This YAML file represents a tasks file for the "docker" role in an Ansible playbook.
+
+# Task: Clean packages
+- name: Clean packages
+  # Use the "command" module to run a command to clean packages
+  command:
+    cmd: yum clean -y packages
+
+# Task: Install device-mapper-persistent-data
+- name: Install device-mapper-persistent-data
+  # Use the "yum" module to install the "device-mapper-persistent-data" package
+  yum:
+    name: device-mapper-persistent-data
+    state: latest
+
+# Task: Install lvm2
+- name: Install lvm2
+  # Use the "yum" module to install the "lvm2" package
+  yum:
+    name: lvm2
+    state: latest
+
+# Task: Add Docker repository
+- name: Add repo docker
+  # Use the "command" module to add the Docker repository to the system
+  command:
+    cmd: sudo yum-config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+
+# Task: Install Docker
+- name: Install Docker
+  # Use the "yum" module to install the "docker-ce" package
+  yum:
+    name: docker-ce
+    state: latest
+
+# Task: Ensure Docker service is running
+- name: Make sure Docker is running
+  # Use the "service" module to start the Docker service
+  service:
+    name: docker
+    state: started
+  tags: docker
