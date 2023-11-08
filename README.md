@@ -4,11 +4,11 @@ How to publish an image:
 
 1. tag image 
 ```
-docker tag my-database badou237/devops-database:1.0
+docker tag my-database username_docker/image_namee:tag
 ```
 2. push image
 ```
-docker push badou237/devops-backend:1.0
+docker push username_docker/devops-backend:1.0
 ```
 # GitHub Action
 
