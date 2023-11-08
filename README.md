@@ -1,5 +1,10 @@
 # tdDevops
 
+
+
+- [Readme backend](https://github.com/BADOUANA/tdDevops/blob/7b178235ae2ea39e5aabfd498b3e1275b398991e/simple-api-student-main/README.md)
+- [Readme database](https://github.com/BADOUANA/tdDevops/blob/7b178235ae2ea39e5aabfd498b3e1275b398991e/tp1/tp/README.md)
+
 How to publish an image:
 
 1. tag image 
@@ -341,6 +346,3 @@ We change our playbook to this, check every tasks to see the configuration.
     - httpd
 ```
 
-Check Others readme in each readme to find the response of other questions:
-- [Readme backend](https://github.com/BADOUANA/tdDevops/blob/7b178235ae2ea39e5aabfd498b3e1275b398991e/simple-api-student-main/README.md)
-- [Readme database](https://github.com/BADOUANA/tdDevops/blob/7b178235ae2ea39e5aabfd498b3e1275b398991e/tp1/tp/README.md)
